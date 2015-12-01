@@ -23,7 +23,7 @@ These are shrunk by roughly half:
 ![figure-001.png](/../examples/figure-001.png?raw=true 'Figure 1')
 ![figure-002.png](/../examples/figure-002.png?raw=true 'Figure 2')
 
-## Photoshop script
+## Photoshop Script
 
 I've included `crop-coords.jsx` a Photoshop script that I made to help me efficiently mark the crop coordinates for each figure and copy them over to the makefile. The basic operation is that you pull out 4 guides to create the bounding box of your crop, then run the script. You'll then have your `x`, `y`, `width`, and `height` information copied to the clipboard.
 
