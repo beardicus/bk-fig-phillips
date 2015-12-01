@@ -1,8 +1,10 @@
-# brew install imagemagick --with-jp2
+# A makefile to extract figures from the book
+# _Beekeeping_ by Everet Franklin Phillips, Ph.D.
 
 book = beekeepingdiscus01phil
 
 
+# make all PNGs
 all:out/frontispiece.png \
 	$(foreach v, $(shell seq -w 1 190), out/figure-$(v).png)
 
@@ -19,14 +21,13 @@ src/$(book)_%.jp2: src/$(book)_jp2.zip
 	unzip -p src/$(book)_jp2.zip $(book)_jp2/$(notdir $@) > $@
 
 
+# laboriously crop and rotate each figure
 # $(call fig-crop,x,y,w,h,rotate)
 define crop
 	@ mkdir -p $(dir $@)
 	convert $< -colorspace Gray -crop $(3)x$(4)+$(1)+$(2) -rotate $(5) $@
 endef
 
-
-# laboriously crop and rotate each figure
 crop/frontispiece.tif: src/$(book)_0008.jp2
 	$(call crop,253,315,1958,2870,90)
 
