@@ -168,8 +168,8 @@ crop/figure-045.tif: src/$(book)_0096.jp2
 crop/figure-046.tif: src/$(book)_0100.jp2
 	$(call crop,297,272,699,2852,0)
 
-crop/figure-047.tif: src/$(book)_0100.jp2  # this figure seems to be missing
-	$(call crop,10,10,10,10,0)
+crop/figure-047.tif: src/$(book)_0104.jp2
+	$(call crop,505,324,1425,2789,0)
 
 crop/figure-048.tif: src/$(book)_0100.jp2
 	$(call crop,995,281,1087,2850,0)
@@ -604,5 +604,5 @@ crop/figure-190.tif: src/$(book)_0470.jp2
 # tweak and convert figures into final output
 out/%.png: crop/%.tif
 	@ mkdir -p $(dir $@)
-	convert $< -level 15%,85% -sharpen 0x2 -bordercolor white -border 50 $@
+	convert $< -level 15%,80% -sharpen 0x1 -bordercolor white -border 50 $@
 #	optipng $@
