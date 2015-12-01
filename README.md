@@ -15,3 +15,8 @@ After that's sorted:
 3. `make`
 
 You'll end up with a bunch of `figure-###.png` PNGs in the `out` folder.
+
+## Example Output
+
+![figure-001.png](/../examples/figure-001.png?raw=true 'Figure 1')
+![figure-002.png](/../examples/figure-002.png?raw=true 'Figure 2')
