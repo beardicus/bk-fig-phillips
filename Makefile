@@ -605,4 +605,4 @@ crop/figure-190.tif: src/$(book)_0470.jp2
 out/%.png: crop/%.tif
 	@ mkdir -p $(dir $@)
 	convert $< -level 15%,80% -sharpen 0x1 -bordercolor white -border 50 $@
-#	optipng $@
+	optipng $@
